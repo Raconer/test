@@ -1,0 +1,22 @@
+group 'com.kotlin.moduleTest'
+version '1.0-SNAPSHOT'
+
+repositories {
+    //mavenCentral()
+    jcenter()
+}
+
+
+compileKotlin {
+    kotlinOptions {
+        freeCompilerArgs = ["-Xjsr305=strict"]
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies{
+    compile project(":Business")
+    compile("org.springframework.boot:spring-boot-starter-web:${rootProject.springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-mustache:${rootProject.springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-tomcat:${rootProject.springBootVersion}")
+}
